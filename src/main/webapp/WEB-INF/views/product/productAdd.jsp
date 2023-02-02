@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Member List Page</h1>
-	<a href="./">HOME</a>
+	<h1>Product Add Page</h1>
+	<%
+	String a = (String)request.getAttribute("add");
+	
+	%>
+	
+	<h1>a</h1>
+	
 </body>
 </html>

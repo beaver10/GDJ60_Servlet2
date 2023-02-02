@@ -80,6 +80,33 @@ public class ProductDAO {
 	//--------------------------------------------------------------------------------------------------
 	//Product
 	
+	public ProductDTO getProductDetail(ProductDTO productDTO) throws Exception{
+		
+		Connection con = DBConnection.getConnection();
+		String sql = "SELECT * FROM PRODUCT WHERE PRODUCTNUM= ?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setLong(1, productDTO.getProductNum());
+		
+		ResultSet rs = st.executeQuery();
+		
+		if(rs.next()) {
+			productDTO.setProductNum(rs.getLong("PRODUCTNUM"));
+			productDTO.setProductName(rs.getString("PRODUCTNAME"));
+			productDTO.setProductDetail(rs.getString("PRODUCTDETAIL"));
+			productDTO.setProductJumsu(rs.getDouble("PRODUCTJUMSU"));
+		}else {
+			productDTO=null;
+		}
+		
+		DBConnection.disConnect(st, con, rs);
+		
+		return productDTO;
+		
+	}
+	
+	
 	public List<ProductDTO> getProductList() throws Exception {
 		
 		ArrayList<ProductDTO> ar = new ArrayList<ProductDTO>();

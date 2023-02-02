@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,40 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("hello hayoung");
+		
+		Soldier soldier = new Soldier();
+		Gun gun = new Gun();
+		Bullet bullet = new Bullet();
+		
+		gun.setBullet(bullet);
+		soldier.setGun(gun);
+		
+		soldier.useGun();
+		
+//		String method =request.getMethod();
+//		StringBuffer sb = request.getRequestURL();
+//		String uri = request.getRequestURI();
+//		Cookie [] cookies =request.getCookies();
+//		String context =request.getContextPath();
+//		String name = request.getParameter("name");
+//		String age = request.getParameter("age");
+//		int a = Integer.parseInt(age);			
+//		String [] moneys = request.getParameterValues("money");
+//		
+//		System.out.println("Method : "+ method);
+//		System.out.println("Request URL :"+sb);
+//		System.out.println("URI :" + uri);
+//		for(Cookie cookie : cookies) {
+//			System.out.println("cookie name :"+cookie.getName());
+//			System.out.println("cookie value : " +cookie.getValue());
+//		}
+//		System.out.println("ContextPath : " + context);
+//		System.out.println("Parameter name :" +name);
+//		System.out.println("Parameter age :"+a*2);
+//		for(String m : moneys) {
+//			System.out.println(m);
+//		}
+		
 //		PrintWriter out = response.getWriter();
 //		out.println("<h1>hayoung page</h1>");
 //		out.println("<h2>header2</h2>");

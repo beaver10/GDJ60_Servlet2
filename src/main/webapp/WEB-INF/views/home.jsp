@@ -8,7 +8,10 @@
 </head>
 <body>
 	<h1>Home Page</h1>
-	<a href="./product.do" >Product List 상대경로</a>
+	<a href="./product/list.do" >Product List 상대경로</a>
+	<a href="./product/add.do" >Product Add 상대경로</a>
+	<a href="./product/update.do" >Product Update 상대경로</a>
+	<a href="./product/detail.do" >Product Detail 상대경로</a>
 	<a href="./member.do">Member List 상대경로</a>
 	
 </body>

@@ -30,11 +30,24 @@ public class ProductService {
 	}
 	
 	
+	public ProductDTO getProductDetail(ProductDTO productDTO) throws Exception {
+		return productDAO.getProductDetail(productDTO);
+	}
+	
+	
+	
+	public List<ProductDTO> getProductList() throws Exception{
+		return productDAO.getProductList();
+		
+	}
+	
+	
 	public int setAddProduct (ProductDTO productDTO, List<ProductOptionDTO>ar) throws Exception{
 		//product, option 등록
 		Long productNum = productDAO.getProductnum();
 		productDTO.setProductNum(productNum);
 		int result = productDAO.setAddProduct(productDTO);
+		
 		for(ProductOptionDTO productOptionDTO:ar) {
 			productDTO.setProductNum(productNum);
 			result = productDAO.setAddProductOption(productOptionDTO);
